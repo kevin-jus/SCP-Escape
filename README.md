@@ -1,6 +1,6 @@
 # SCP Escape Game
 
-Welcome to the **SCP Escape Game**! In this text-based adventure, you must navigate a mysterious facility while avoiding a dangerous SCP (Secure. Contain. Protect). Your mission is to survive, collect useful items, and find the Emergency Exit before the SCP catches you. For more detail go to [Explanation](explanation.txt). And you can even go to kevin-jus/SCP-Escape for this game repository.
+Welcome to the **SCP Escape Game**! In this text-based adventure, you must navigate a mysterious facility while avoiding a dangerous SCP (Secure. Contain. Protect). Your mission is to survive, collect useful items, and find the Emergency Exit before the SCP catches you. For more detail go to [Explanation](explanation.txt). And you can even go to [Github](https://github.com/kevin-jus/SCP-Escape) for this game repository.
 
 ## Gameplay
 

@@ -1,0 +1,55 @@
+Function main
+    Create a Game object
+    Start the game using Game's start_game function
+
+Class Game:
+    Function __init__:
+        Initialize Player with name
+        Set up map locations with descriptions and items
+        Randomly place SCP on the map
+        Determine maximum boundaries of the map
+        Print game initialization messages
+
+    Function process_player_move(direction):
+        If Player can move in the specified direction:
+            Update Player's location
+            Print new location details and items found
+            If special case (Security Keycard is used):
+                Move Player to Emergency Exit
+                Print confirmation
+        Else:
+            Print invalid move message
+
+    Function handle_item_pickup:
+        Get current location
+        If items are present:
+            If only one item, automatically pick it up
+            Else, prompt the player to choose an item to pick up
+            Add the chosen item to Player's backpack
+            Print updated backpack contents
+        Else:
+            Print no items message
+
+    Function check_game_over:
+        If Player's location matches SCP's location:
+            Print "Game Over" message
+            Return True to end the game
+        Return False to continue the game
+
+    Function check_game_won:
+        If Player reaches the Emergency Exit:
+            Print "You have won" message
+            Return True to end the game
+        Return False to continue the game
+
+    Function gameplay_loop:
+        While game is not over:
+            Get direction from Player
+            Process Player's move
+            Ask if Player wants to pick up items
+            If yes, handle item pickup
+            Move SCP and print its new location
+            Check if the game is over or won
+
+    Function start_game:
+        Begin gameplay loop

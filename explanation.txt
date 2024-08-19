@@ -1,0 +1,72 @@
+SCP Escape Game - Detailed Explanation
+Welcome to the SCP Escape Game! This document provides an in-depth explanation of the game's design, functionality, and code structure. It’s intended to help future developers and educators understand the logic and components behind the game.
+
+Overview
+SCP Escape Game is a text-based adventure where the player navigates a facility while avoiding a dangerous SCP entity. The game involves moving between locations, collecting items, and ultimately escaping before the SCP catches the player.
+
+Key Components
+Classes
+Player Class
+
+Attributes:
+name: Player's name (string).
+health: Player's health (integer, starting at 100).
+backpack: List of items the player carries.
+location: Current location of the player (tuple of coordinates).
+Methods:
+move(direction, max_x, max_y): Moves the player based on the direction provided (forward, backward, left, right). Ensures the player does not move out of bounds.
+add_to_backpack(item): Adds an item to the player's backpack if there is room (up to 4 items).
+Location Class
+
+Attributes:
+coordinates: Location coordinates (tuple of x and y).
+description: Textual description of the location.
+items: List of items available at this location.
+Methods:
+__str__(): Provides a string representation of the location including its coordinates and description.
+Scp Class
+
+Attributes:
+name: Name of the SCP (string).
+caution: Warning or caution details about the SCP (string).
+power: Power level of the SCP (integer, affecting the player's health).
+location: Current location of the SCP (tuple of coordinates).
+Methods:
+move(max_x, max_y): Randomly moves the SCP to a new location within the given bounds. Returns a message indicating the new location of the SCP.
+Game Flow
+Initialization:
+
+The game starts by asking the player for their name and creates a Player object.
+The game defines various locations within the facility, each with coordinates, descriptions, and possible items.
+An SCP object is created and placed at a random location within the facility.
+Gameplay Loop:
+
+Display Initial State: Shows the player’s starting location and the initial position of the SCP.
+Player Actions:
+Movement: The player can move in one of four directions. The game checks if the movement is within bounds and updates the player’s location accordingly.
+Item Collection: The player can pick up items from their current location. The inventory (backpack) is managed with a maximum capacity of 4 items.
+SCP Movement: The SCP moves randomly after each player action. The game updates the SCP’s location and informs the player.
+Winning and Losing Conditions:
+Game Over: If the player and SCP occupy the same location, the game ends with a "Game Over" message.
+Victory: If the player reaches the Emergency Exit location, they win the game and receive a congratulatory message.
+Code Details
+Movement and Boundaries:
+
+Movement is controlled by checking the player’s current location and ensuring they stay within the defined boundaries (max_x and max_y).
+Item Management:
+
+Items are managed with a simple list within the Player class. The player can pick up items if there is space in their backpack.
+Random SCP Movement:
+
+The SCP’s movement is determined using Python’s random.randint() function to select new coordinates within the facility’s bounds.
+User Interaction:
+
+The game uses the input() function to interact with the player, allowing them to choose actions and make decisions.
+Future Enhancements
+Expand the Map: Add more locations to increase the complexity of the game.
+Advanced SCP Behavior: Introduce different types of SCPs with unique behaviors and effects on the player.
+Graphical User Interface: Develop a GUI version of the game for a more immersive experience.
+Conclusion
+This text-based adventure game is designed to be a fun and engaging way to explore basic game development concepts in Python. It features simple mechanics, clear objectives, and room for future expansion. Whether you’re a developer looking to enhance your skills or a teacher evaluating a student project, we hope this game provides both entertainment and insight.
+
+Happy gaming, and remember: The SCP is always lurking!

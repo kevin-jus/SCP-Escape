@@ -1,0 +1,2 @@
+# No external libraries required for this game. 
+# If any dependencies become necessary in the future, they will be added here.
